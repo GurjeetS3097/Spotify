@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Spotify Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    #myProgressBar {
+        width: 80vw;
+    }
+
+    .containers {
+        min-height: 72vh;
+        font-family: 'Varela Round', sans-serif;
+        margin: 23px auto;
+        width: 70%;
+        border-radius: 12px;
+        padding: 34px;
+    }
+
+    .songItem {
+        height: 50px;
+        display: flex;
+        background-color: rgba(184, 177, 177, 0.591);
+
+        color: black;
+        margin: 12px 0;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 34px;
+    }
+
+    .songItem img {
+        width: 40px;
+        margin: 0 40px;
+        border-radius: 40px;
+    }
+
+    .background {
+        background-image: url(car.jpg);
+    }
+
+    .songInfo {
+        position: absolute;
+        left: 10vw;
+        font-family: 'Varela Round', sans-serif;
+    }
+
+    .songInfo img {
+        opacity: 0;
+        transition: opacity 0.4s ease-in;
+    }
+
+    .bottom {
+        position: sticky;
+        bottom: 0;
+        height: 130px;
+        background-color: black;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+
+    .icons {
+        margin-top: 14px;
+    }
+
+    .icons i {
+        cursor: pointer;
+    }
+</style>
+
+<body class=" font-sans background">
+    <nav class="font-serif bg-black h-20 bg-opacity-70">
+        <ul class="flex items-center text-white align-middle space-x-5">
+            <li class="flex items-center font-bold cursor-pointer text-lg"><img src="logo.png" alt="Spotify"
+                    class="px-11 w-40">Spotify</li>
+            <li class="cursor-pointer py-6 ">Home</li>
+            <li class="cursor-pointer py-6">About</li>
+            <li class="ml-auto">
+                <button class="bg-green-500 text-white px-4 py-2 rounded-full bg-opacity-60">Login</button>
+            </li>
+        </ul>
+    </nav>
+    <div class="containers flex bg-black text-white bg-opacity-80">
+        <h1 class="font-bold items-center">My Fav Playlist</h1>
+        <div class="mt-8 ">
+            <div class="songItem">
+                <img src="covers/1.jpg" alt="1">
+                <span class="songName">Let me Love You</span>
+                <span class="songlistplay"><span class="timestamp">05:34 <i id="0"
+                            class="far songItemPlay fa-play-circle"></i> </span></span>
+            </div>
+            <div class="songItem">
+                <img src="covers/2.jpg" alt="1">
+                <span class="songName">Let me Love You</span>
+                <span class="songlistplay"><span class="timestamp">05:34 <i id="1"
+                            class="far songItemPlay fa-play-circle"></i> </span></span>
+            </div>
+            <div class="songItem">
+                <img src="covers/3.jpg" alt="1">
+                <span class="songName">Let me Love You</span>
+                <span class="songlistplay"><span class="timestamp">05:34 <i id="2"
+                            class="far songItemPlay fa-play-circle"></i> </span></span>
+            </div>
+            <div class="songItem">
+                <img src="covers/4.jpg" alt="1">
+                <span class="songName">Let me Love You</span>
+                <span class="songlistplay"><span class="timestamp">05:34 <i id="3"
+                            class="far songItemPlay fa-play-circle"></i> </span></span>
+            </div>
+            <div class="songItem">
+                <img src="covers/5.jpg" alt="1">
+                <span class="songName">Let me Love You</span>
+                <span class="songlistplay"><span class="timestamp">05:34 <i id="4"
+                            class="far songItemPlay fa-play-circle"></i> </span></span>
+            </div>
+            <div class="songItem">
+                <img src="covers/6.jpg" alt="1">
+                <span class="songName">Let me Love You</span>
+                <span class="songlistplay"><span class="timestamp">05:34 <i id="5"
+                            class="far songItemPlay fa-play-circle"></i> </span></span>
+            </div>
+            <div class="songItem">
+                <img src="covers/7.jpg" alt="1">
+                <span class="songName">Let me Love You</span>
+                <span class="songlistplay"><span class="timestamp">05:34 <i id="6"
+                            class="far songItemPlay fa-play-circle"></i> </span></span>
+            </div>
+            <div class="songItem">
+                <img src="covers/8.jpg" alt="1">
+                <span class="songName">Let me Love You</span>
+                <span class="songlistplay"><span class="timestamp">05:34 <i id="7"
+                            class="far songItemPlay fa-play-circle"></i> </span></span>
+            </div>
+            <div class="songItem">
+                <img src="covers/9.jpg" alt="1">
+                <span class="songName">Let me Love You</span>
+                <span class="songlistplay"><span class="timestamp">05:34 <i id="8"
+                            class="far songItemPlay fa-play-circle"></i> </span></span>
+            </div>
+            <div class="songItem">
+                <img src="covers/10.jpg" alt="1">
+                <span class="songName">Let me Love You</span>
+                <span class="songlistplay"><span class="timestamp">05:34 <i id="9"
+                            class="far songItemPlay fa-play-circle"></i> </span></span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="sticky bottom-0 h-36 bg-black text-white flex justify-center items-center flex-col bg-opacity-80">
+        <input type="range" name="range" id="myProgressBar" min="0" value="0" max="100" class="cursor-pointer">
+        <div class=" icons">
+            <i class="fa fa-3x fa-backward" id="previous"></i>
+            <i class="fa fa-3x fa-play-circle" id="masterPlay"></i>
+            <i class="fa fa-3x fa-forward" id="next"></i>
+        </div>
+        <div class=" songInfo">
+            <img src="music.gif" width="35px" alt="" id="gif"> <span id="masterSongName">Warriyo - Mortals [NCS
+                Release]</span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/26504e4a1f.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
